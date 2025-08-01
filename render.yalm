@@ -22,7 +22,7 @@ services:
       - key: DB_POSTGRESDB_PASSWORD
         value: EOSeCpYBvNmpjFQfXTdy4g
       - key: DB_POSTGRESDB_SSL_CA
-        value: <paste_your_base64_encoded_root_crt_here>
+        value: bWtkaXIgLXAgJGVudjphcHBkYXRhXHBvc3RncmVzcWxcOyBJbnZva2UtV2ViUmVxdWVzdCAtVXJpIGh0dHBzOi8vY29ja3JvYWNobGFicy5jbG91ZC9jbHVzdGVycy9kMDFjNDU4NC00MGNkLTRhYjgtYTRhMy04ZDQ3ODU1MjE1OWMvY2VydCAtT3V0RmlsZSAkZW52OmFwcGRhdGFccG9zdGdyZXNxbFxyb290LmNydA==
       - key: DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED
         value: true
 
