@@ -1,0 +1,40 @@
+services:
+  - type: web
+    name: n8n
+    env: docker
+    repo: https://github.com/SANJAI-s0/n8n-self_host
+    branch: main
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DB_TYPE
+        value: postgresdb
+      - key: DB_POSTGRESDB_HOST
+        value: n8n-db-13345.j77.aws-ap-south-1.cockroachlabs.cloud
+      - key: DB_POSTGRESDB_PORT
+        value: 26257
+      - key: DB_POSTGRESDB_DATABASE
+        value: defaultdb
+      - key: DB_POSTGRESDB_USER
+        value: sanjai
+      - key: DB_POSTGRESDB_PASSWORD
+        value: EOSeCpYBvNmpjFQfXTdy4g
+      - key: DB_POSTGRESDB_SSL_CA
+        value: <paste_base64_encoded_root_crt>
+      - key: DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED
+        value: true
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: true
+      - key: N8N_BASIC_AUTH_USER
+        value: Sanjai
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: SANJAI81830s
+      - key: N8N_HOST
+        value: n8n.onrender.com
+      - key: N8N_PORT
+        value: 5678
+      - key: N8N_PROTOCOL
+        value: https
+      - key: WEBHOOK_TUNNEL_URL
+        value: https://n8n.onrender.com
