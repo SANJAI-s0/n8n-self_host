@@ -5,10 +5,11 @@ services:
     repo: https://github.com/SANJAI-s0/n8n-self_host
     branch: main
     plan: free
-    region: singapore  # or change to closest region to your CockroachDB cluster
+    region: singapore
     dockerfilePath: ./Dockerfile
     startCommand: n8n start
     envVars:
+      # === CockroachDB ===
       - key: DB_TYPE
         value: postgresdb
       - key: DB_POSTGRESDB_HOST
@@ -26,7 +27,7 @@ services:
       - key: DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED
         value: true
 
-      # n8n Basic Auth
+      # === n8n Auth ===
       - key: N8N_BASIC_AUTH_ACTIVE
         value: true
       - key: N8N_BASIC_AUTH_USER
@@ -34,7 +35,7 @@ services:
       - key: N8N_BASIC_AUTH_PASSWORD
         value: SANJAI81830s
 
-      # Host & Webhook Settings
+      # === Web Interface Settings ===
       - key: N8N_HOST
         value: n8n.onrender.com
       - key: N8N_PORT
@@ -44,7 +45,7 @@ services:
       - key: WEBHOOK_TUNNEL_URL
         value: https://n8n.onrender.com
 
-      # Optional (you can enable email notifications later)
+      # === Optional SMTP/Email Support ===
       - key: N8N_EMAIL_MODE
         value: smtp
       - key: N8N_SMTP_USER
